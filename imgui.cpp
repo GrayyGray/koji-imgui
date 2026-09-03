@@ -13633,7 +13633,7 @@ static void ImGui::NavProcessItem()
             {
                 NavProcessItemForTabbingRequest(id, item_flags, g.NavMoveFlags);
             }
-            else if (g.NavId != id || (g.NavMoveFlags & ImGuiNavMoveFlags_AllowCurrentNavId))
+            else if ((item_flags & ImGuiItemFlags_NoArrowNav) == 0 && (g.NavId != id || (g.NavMoveFlags & ImGuiNavMoveFlags_AllowCurrentNavId)))
             {
                 ImGuiNavItemData* result = (window == g.NavWindow) ? &g.NavMoveResultLocal : &g.NavMoveResultOther;
                 if (NavScoreItem(result, nav_bb))

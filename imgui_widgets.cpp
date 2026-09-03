@@ -10782,8 +10782,8 @@ bool    ImGui::TabItemEx(ImGuiTabBar* tab_bar, const char* label, bool* p_open, 
 
     ImGuiItemFlags item_flags = ImGuiItemFlags_None;
 
-    if (tab_bar->Flags & ImGuiTabItemFlags_NoArrowNav)
-        item_flags |= ImGuiTabItemFlags_NoArrowNav;
+    if (flags & ImGuiTabItemFlags_NoArrowNav)
+        item_flags |= ImGuiItemFlags_NoArrowNav;   
 
     if (!ItemAdd(bb, id, NULL, item_flags))
     {
