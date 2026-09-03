@@ -1252,6 +1252,7 @@ enum ImGuiItemFlags_
 {
     ImGuiItemFlags_None                     = 0,        // Default:
     ImGuiItemFlags_NoTabStop                = 1 << 0,   // false    // Disable keyboard tabbing. This is a "lighter" version of ImGuiItemFlags_NoNav.
+    ImGuiItemFlags_NoArrowNav               = 1 << 9,
     ImGuiItemFlags_NoNav                    = 1 << 1,   // false    // Disable any form of focusing: keyboard/gamepad directional navigation and SetKeyboardFocusHere() calls.
     ImGuiItemFlags_NoNavDefaultFocus        = 1 << 2,   // false    // Disable item being a candidate for default focus (e.g. used by title bar items).
     ImGuiItemFlags_ButtonRepeat             = 1 << 3,   // false    // Any button-like behavior will have repeat mode enabled (based on io.KeyRepeatDelay and io.KeyRepeatRate values). Note that you can also call IsItemActive() after any button to tell if it is being held.
@@ -1454,6 +1455,7 @@ enum ImGuiTabItemFlags_
     ImGuiTabItemFlags_Leading                       = 1 << 6,   // Enforce the tab position to the left of the tab bar (after the tab list popup button)
     ImGuiTabItemFlags_Trailing                      = 1 << 7,   // Enforce the tab position to the right of the tab bar (before the scrolling buttons)
     ImGuiTabItemFlags_NoAssumedClosure              = 1 << 8,   // Tab is selected when trying to close + closure is not immediately assumed (will wait for user to stop submitting the tab). Otherwise closure is assumed when pressing the X, so if you keep submitting the tab may reappear at end of tab bar.
+    ImGuiTabItemFlags_NoArrowNav                    = 1 << 9,   // Tab wont be navigatable by arrow keys
 };
 
 // Flags for ImGui::IsWindowFocused()

@@ -10780,7 +10780,12 @@ bool    ImGui::TabItemEx(ImGuiTabBar* tab_bar, const char* label, bool* p_open, 
     ItemSize(bb.GetSize(), style.FramePadding.y);
     window->DC.CursorMaxPos = backup_cursor_max_pos;
 
-    if (!ItemAdd(bb, id))
+    ImGuiItemFlags item_flags = ImGuiItemFlags_None;
+
+    if (tab_bar->Flags & ImGuiTabItemFlags_NoArrowNav)
+        item_flags |= ImGuiTabItemFlags_NoArrowNav;
+
+    if (!ItemAdd(bb, id, NULL, item_flags))
     {
         if (want_clip_rect)
             PopClipRect();
